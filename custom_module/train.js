@@ -3,6 +3,9 @@ class Train {
         this.direction=direction;
         this.code=code;
         this.passengerList=[];
+        // add array of tickets
+        this.ticketListInTrain=[];
+        // 
         if(typeof direction==='undefined') this.direction='NoDirection';
         if(typeof code==='undefined') this.code='NoCode';
     }
@@ -48,25 +51,39 @@ function deleteTrain(direction, code) {
     }
     return -1;
 }
-// ЕКСПОРТУВАТИ ФУНКЦІІ!!!!!
+
+// l. Пошук потяга на який продали найбільше/найменше квитків 
+
+function maxAmountOfTickets() {
+    let max =trainsList[0];
+    for(let id=1;id<trainsList.length;id++) {
+        if( max.ticketListInTrain.length<trainsList[id].ticketListInTrain.length) {
+            max=trainsList[id];
+        }
+    }
+    return max;
+}
+function minAmountOfTickets() {
+    let min =trainsList[0];
+    for(let id=1;id<trainsList.length;id++) {
+        if( min.ticketListInTrain.length>trainsList[id].ticketListInTrain.length) {
+            min=trainsList[id];
+        }
+    }
+    return min;
+}
+
+// ЕКСПОРТУВАТИ ФУНКЦІІ
+exports.addTrain=addTrain;
+exports.deleteTrain=deleteTrain;
+exports.editTrain=editTrain;
+exports.findTrain=findTrain;
+exports.maxAmountOfTickets=maxAmountOfTickets;
+exports.minAmountOfTickets=minAmountOfTickets;
 
 
 
 
-
-// Отримати список лікарень
-// function get_Hospitals_List() {
-//   console.log("\n" + "Список усіх лікарень:");
-
-//   for (let id = 0; id < global_hospitals_list.length; id++) {
-//     let hosp = global_hospitals_list[id];
-//     console.log(`Назва лікарні: ${hosp.name}, адреса лікарні: ${hosp.address}`);
-//   }
-
-//   console.log();
-
-//   return global_hospitals_list;
-// }
 
 // Експортуємо функції
 // exports.find_Hospital = find_Hospital;

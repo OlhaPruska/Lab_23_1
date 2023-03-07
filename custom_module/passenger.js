@@ -45,26 +45,11 @@ function findPassenger(name, surname, train) {
 }
 
 
-//ЕКСПОРТУВАТИ ФУНКЦІЇ!!!!!!!! 
+//ЕКСПОРТУВАТИ ФУНКЦІЇ
+exports.addPassenger=addPassenger;
+exports.deletePasenger=deletePasenger;
+exports.editPassenger=editPassenger;
+exports.findPassenger=findPassenger;
 
 
 
-
-
-// Отримати список пацієнтів у конкретній лікарні
-// function get_Patients_List (hospital) {
-
-//     console.log("\n" + `Список усіх пацієнтів у лікарні ${hospital.name}:`);
-
-//     for (let id = 0; id < hospital.patients_list.length; id++) {
-
-//         let patient = hospital.patients_list[id];
-//         console.log(`\tІм'я пацієнта: ${patient.name}, вік: ${patient.age}`);
-
-//     }
-
-//     console.log();
-    
-//     return hospital.patients_list;
-
-// }
