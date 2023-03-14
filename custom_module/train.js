@@ -72,6 +72,15 @@ function minAmountOfTickets() {
     }
     return min;
 }
+function getTrains() {
+    console.log("\nALL TRAINS\n");
+    for(let id=0;id<trainsList.length; id++) {
+        let tr=trainsList[id];
+        console.log(`Direction ${tr.direction} code ${tr.code}`);
+    }
+    console.log();
+    return trainsList;
+}
 
 // ЕКСПОРТУВАТИ ФУНКЦІІ
 exports.addTrain=addTrain;
@@ -81,6 +90,7 @@ exports.findTrain=findTrain;
 exports.maxAmountOfTickets=maxAmountOfTickets;
 exports.minAmountOfTickets=minAmountOfTickets;
 
+exports.getTrains=getTrains;
 
 
 

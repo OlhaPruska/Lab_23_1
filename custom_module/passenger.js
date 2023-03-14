@@ -43,13 +43,22 @@ function findPassenger(name, surname, train) {
     }
     return -1;
 }
-
+function getPassengersFromTrain(train) {
+    console.log("\nALL PASSENGERS\n");
+   
+    for(let id=0;id<train.passengerList.length; id++) {
+        let ps=train.passengerList[id];
+        console.log(`${ps.name} ${ps.surname}`);
+    }
+    console.log();
+    return train.passengerList;
+}
 
 //ЕКСПОРТУВАТИ ФУНКЦІЇ
 exports.addPassenger=addPassenger;
 exports.deletePasenger=deletePasenger;
 exports.editPassenger=editPassenger;
 exports.findPassenger=findPassenger;
-
+exports.getPassengersFromTrain=getPassengersFromTrain;
 
 

@@ -25,3 +25,35 @@
 
 // Усі колекції реалізувати у вигляді масивів Array
 
+const mod = require('./custom_module');
+const { addTrain } = require('./custom_module/train');
+
+//            TRAINS
+let tr_1 = mod.addTrain("Kyiv-Poltava", "E086");
+let tr_2=mod.addTrain("Lviv-Kharkiv", "B098");
+let  tr_3 = mod.addTrain("Kovel-Simpheropol", "A456");
+
+mod.editTrain("Kyiv-Poltava", "E086", "Kyiv-Lviv", "E099");
+
+let find_2=mod.findTrain("Lviv-Kharkiv", "B098");
+console.log(`Прошук потяга ${tr_2.direction}, ${tr_2.code} - ${find_2!==-1? "знайдено" : "не знайдено"}`);
+
+mod.getTrains();
+mod.deleteTrain("Kyiv-Lviv",  "E099");
+mod.getTrains();
+
+//                  PASSENGERS
+let pas_1=mod.addPassenger("Anastasia", "Putko", tr_1);
+let pas_2=mod.addPassenger("Petro" ,"Schur", tr_3);
+let pas_3=mod.addPassenger("Dmytro", "Petrenko", tr_1);
+let pas_4=mod.addPassenger("Petro", "Chornyi", tr_2);
+let pas_5=mod.addPassenger("Uliana", "Bayrak", tr_1);
+mod.getPassengersFromTrain(tr_1);
+mod.deletePasenger("Anastasia", "Putko", tr_1);
+mod.getPassengersFromTrain(tr_1);
+mod.editPassenger("Petro" ,"Schur","Mykola","Veresen", tr_3);
+let find_pas=mod.findPassenger("Dmytro", "Petrenko", tr_1);
+console.log(`Пошук пасажира ${pas_5.name} ${pas_5.surname} - ${find_pas!==-1? "yes":"no"}`);
+
+
+//                  TICKETS
