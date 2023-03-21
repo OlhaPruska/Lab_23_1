@@ -53,7 +53,19 @@ mod.deletePasenger("Anastasia", "Putko", tr_1);
 mod.getPassengersFromTrain(tr_1);
 mod.editPassenger("Petro" ,"Schur","Mykola","Veresen", tr_3);
 let find_pas=mod.findPassenger("Dmytro", "Petrenko", tr_1);
-console.log(`Пошук пасажира ${pas_5.name} ${pas_5.surname} - ${find_pas!==-1? "yes":"no"}`);
+console.log(`Пошук пасажира ${pas_5.name} ${pas_5.surname} - ${find_pas!==-1? "found":"not found"}`);
 
 
 //                  TICKETS
+let t_1=mod.buyTicket(45, 3,pas_1, tr_1);
+let t_2=mod.buyTicket(11,12,pas_2,tr_1);
+let t_3=mod.buyTicket(52,10,pas_4,tr_1);
+let t_4=mod.buyTicket(34,2,pas_5,tr_2);
+let t_5=mod.buyTicket(44,9,pas_3,tr_3);
+
+mod.getTicket(tr_1);
+mod.deleteTicket(11,12,pas_2,tr_1);
+mod.getTicket(tr_1);
+mod.changeTicket(34,2,pas_5,tr_2,tr_1);
+mod.getTicket(tr_1);
+

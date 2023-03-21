@@ -14,6 +14,7 @@ exports.buyTicket=ticket.buyTicket;
 exports.deleteTicket=ticket.deleteTicket;
 exports.findSoldTicket=ticket.findSoldTicket;
 exports.changeTicket=ticket.changeTicket;
+exports.getTicket=ticket.getTicket;
 
 // операції з потягами
 exports.addTrain=train.addTrain;

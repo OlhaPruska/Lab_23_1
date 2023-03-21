@@ -44,7 +44,7 @@ function findPassenger(name, surname, train) {
     return -1;
 }
 function getPassengersFromTrain(train) {
-    console.log("\nALL PASSENGERS\n");
+    console.log(`\nALL PASSENGERS IN TRAIN ${train.direction} ${train.code}\n`);
    
     for(let id=0;id<train.passengerList.length; id++) {
         let ps=train.passengerList[id];
